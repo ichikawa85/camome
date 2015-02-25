@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128074243) do
+ActiveRecord::Schema.define(version: 20150225050642) do
+
+  create_table "clams", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "type"
+    t.date     "date"
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "event_clams", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "event_impoters", force: true do |t|
     t.datetime "created_at"
@@ -35,6 +50,13 @@ ActiveRecord::Schema.define(version: 20141128074243) do
     t.datetime "last_modified"
     t.datetime "sequence"
     t.string   "rrule"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recurrences", force: true do |t|
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
